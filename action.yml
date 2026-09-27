@@ -1,0 +1,33 @@
+name: PR Size Guard
+description: Keep pull requests reviewable with configurable soft and hard change limits.
+author: Harshit Gupta
+
+branding:
+  icon: minimize-2
+  color: blue
+
+inputs:
+  soft-limit:
+    description: Changed lines that trigger a warning.
+    required: false
+    default: "400"
+  hard-limit:
+    description: Changed lines that fail the check.
+    required: false
+    default: "1000"
+  fail-on-hard-limit:
+    description: Set to false to report oversized pull requests without failing.
+    required: false
+    default: "true"
+
+outputs:
+  changed-lines:
+    description: Additions plus deletions in the pull request.
+  size:
+    description: One of small, medium, large, or oversized.
+  status:
+    description: One of pass, warn, or fail.
+
+runs:
+  using: node20
+  main: src/index.js

@@ -1,0 +1,15 @@
+{
+  "name": "pr-size-guard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A zero-dependency GitHub Action that keeps pull requests reviewable.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/index.js && node --check src/guard.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
